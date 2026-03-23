@@ -1,4 +1,70 @@
 {
-  "name": "react-toast-engine",
-  "packageManager": "yarn@4.11.0"
+  "name": "@lapp-studio/react-toast-engine",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "react": "^19.0.0",
+    "react-native": "^0.84.1",
+    "react-native-gesture-handler": "^2.30.0",
+    "react-native-reanimated": "^4.2.3",
+    "react-native-safe-area-context": "^5.7.0",
+    "react-native-worklets": "^0.8.1",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2",
+    "zustand": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-native": "^0.83.0",
+    "react-native-gesture-handler": "^2.30.0",
+    "react-native-reanimated": "^4.2.1",
+    "react-native-safe-area-context": "^5.0.0",
+    "zustand": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    },
+    "react-native-reanimated": {
+      "optional": true
+    },
+    "react-native-safe-area-context": {
+      "optional": true
+    },
+    "react-native-gesture-handler": {
+      "optional": true
+    }
+  },
+  "maintainers": [
+    "giovanninp"
+  ],
+  "license": "MIT"
 }
