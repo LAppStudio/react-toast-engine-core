@@ -1,6 +1,6 @@
 {
   "name": "@lapp-studio/react-toast-engine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "type": "module",
   "main": "dist/core.js",
@@ -57,6 +57,20 @@
   },
   "maintainers": [
     "giovanninp"
+  ],
+  "keywords": [
+    "react",
+    "react-native",
+    "toast",
+    "notification",
+    "snackbar",
+    "alert",
+    "headless",
+    "zustand",
+    "reanimated",
+    "gesture-handler",
+    "ui",
+    "hybrid"
   ],
   "license": "MIT"
 }
