@@ -137,6 +137,36 @@ api.interceptors.response.use(
 
 ---
 
+## 🎨 Creating Custom Components
+
+Since the engine is **headless**, you have total control over the UI. Your components will receive `toast` data and an `actions` object. Using our exported types ensures full TypeScript support.
+
+```tsx
+import React from "react";
+import { YStack, Text } from "tamagui"; // Or your UI library of choice
+import { ToastComponentProps } from "@lapp-studio/react-toast-engine";
+
+export const MySuccessComponent = ({ toast, actions }: ToastComponentProps) => {
+  return (
+    <YStack
+      backgroundColor="$green10"
+      padding="$4"
+      borderRadius="$8"
+      onPress={() => actions?.onPress?.(toast)}
+    >
+      <Text color="white" fontWeight="bold" fontSize="$4">
+        {toast.title}
+      </Text>
+      <Text color="white" fontSize="$3">
+        {toast.description}
+      </Text>
+    </YStack>
+  );
+};
+```
+
+---
+
 ## 📱 React Native Architecture
 
 The native implementation uses **Shared Values** and **Worklets** to achieve native-level performance:
