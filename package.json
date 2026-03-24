@@ -1,24 +1,29 @@
 {
   "name": "@lapp-studio/react-toast-engine",
-  "version": "1.0.0",
+  "version": "0.00.1",
   "private": false,
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.mjs",
+  "main": "dist/core.js",
+  "types": "dist/core.d.ts",
+  "module": "dist/core.mjs",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.mjs",
+      "require": "./dist/core.js"
+    },
+    "./native": {
+      "types": "./dist/native.d.ts",
+      "import": "./dist/native.mjs",
+      "require": "./dist/native.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup",
+    "dev": "tsdown --watch",
+    "build": "tsdown",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "type-check": "tsc --noEmit",
@@ -30,38 +35,25 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^10.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "react": "^19.0.0",
-    "react-native": "^0.84.1",
-    "react-native-gesture-handler": "^2.30.0",
-    "react-native-reanimated": "^4.2.3",
-    "react-native-safe-area-context": "^5.7.0",
-    "react-native-worklets": "^0.8.1",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.21.4",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.57.2",
-    "zustand": "^5.0.0"
+    "zustand": "^5.0.0",
+    "react": "~19.0.0",
+    "react-native": "~0.83.0",
+    "react-native-gesture-handler": "~2.30.0",
+    "react-native-reanimated": "~4.2.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-worklets": "~0.7.2"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-native": "^0.83.0",
-    "react-native-gesture-handler": "^2.30.0",
-    "react-native-reanimated": "^4.2.1",
-    "react-native-safe-area-context": "^5.0.0",
-    "zustand": "^5.0.0"
-  },
-  "peerDependenciesMeta": {
-    "react-native": {
-      "optional": true
-    },
-    "react-native-reanimated": {
-      "optional": true
-    },
-    "react-native-safe-area-context": {
-      "optional": true
-    },
-    "react-native-gesture-handler": {
-      "optional": true
-    }
+    "zustand": "^5.0.0",
+    "react": "~19.0.0",
+    "react-native": "~0.83.0",
+    "react-native-gesture-handler": "~2.30.0",
+    "react-native-reanimated": "~4.2.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-worklets": "~0.7.2"
   },
   "maintainers": [
     "giovanninp"

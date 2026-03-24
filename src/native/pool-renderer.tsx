@@ -2,10 +2,10 @@ import { StyleSheet, View } from "react-native";
 import Animated, { FadeInUp, FadeOutUp } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import ToastWrapper from "./toast-wrapper";
+import { ToastWrapper } from "./toast-wrapper";
 
-import { useRendererContext } from "../../core/providers/renderer-context";
-import { ToastsPoolRendererProps } from "../../core/types/toasts-renderer";
+import { useRendererContext } from "../core/providers/renderer-context";
+import { ToastsPoolRendererProps } from "../core/types/toasts-renderer";
 
 const Toasts = () => {
   const { store: useStore, components } = useRendererContext();
@@ -30,7 +30,7 @@ const Toasts = () => {
   });
 };
 
-const PoolRenderer = ({ children }: ToastsPoolRendererProps) => {
+export const PoolRenderer = ({ children }: ToastsPoolRendererProps) => {
   const { top } = useSafeAreaInsets();
   const { store: useStore } = useRendererContext();
   const hasToasts = useStore((store) => store.pool.length > 0);
@@ -65,5 +65,3 @@ const styles = StyleSheet.create({
   },
   pool: {},
 });
-
-export default PoolRenderer;

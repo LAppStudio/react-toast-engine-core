@@ -12,7 +12,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
-import { useRendererContext } from "../../core/providers/renderer-context";
+import { useRendererContext } from "../core/providers/renderer-context";
 
 const MIN_DISMISS_VELOCITY = 1e3;
 
@@ -23,7 +23,7 @@ type ToastWrapperProps = {
   id: string;
 };
 
-const ToastWrapper = ({
+export const ToastWrapper = ({
   children,
   index,
   timeoutInMs,
@@ -89,7 +89,7 @@ const ToastWrapper = ({
   }));
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: number;
     if (isActive) {
       timeout = setTimeout(() => {
         handleRemove();
@@ -111,5 +111,3 @@ const ToastWrapper = ({
     </Animated.View>
   );
 };
-
-export default ToastWrapper;
