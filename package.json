@@ -4,18 +4,23 @@
   "private": false,
   "type": "module",
   "main": "dist/core.js",
+  "module": "dist/core.js",
   "types": "dist/core.d.ts",
-  "module": "dist/core.mjs",
   "exports": {
+    ".": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "require": "./dist/core.cjs"
+    },
     "./core": {
       "types": "./dist/core.d.ts",
-      "import": "./dist/core.mjs",
-      "require": "./dist/core.js"
+      "import": "./dist/core.js",
+      "require": "./dist/core.cjs"
     },
     "./native": {
       "types": "./dist/native.d.ts",
-      "import": "./dist/native.mjs",
-      "require": "./dist/native.js"
+      "import": "./dist/native.js",
+      "require": "./dist/native.cjs"
     }
   },
   "files": [
@@ -49,11 +54,11 @@
   "peerDependencies": {
     "zustand": "^5.0.0",
     "react": "~19.0.0",
-    "react-native": "~0.83.0",
-    "react-native-gesture-handler": "~2.30.0",
-    "react-native-reanimated": "~4.2.1",
-    "react-native-safe-area-context": "~5.6.0",
-    "react-native-worklets": "~0.7.2"
+    "react-native": "^0.83.0",
+    "react-native-gesture-handler": "^2.30.0",
+    "react-native-reanimated": "^4.2.1",
+    "react-native-safe-area-context": "ˆ5.6.0",
+    "react-native-worklets": "^0.7.2"
   },
   "maintainers": [
     "giovanninp"
